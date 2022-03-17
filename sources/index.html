@@ -1,0 +1,1643 @@
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Container64 is project for building and sharing OCI compliant container images that can be used for testing infrastructure management tools."><meta name=author content=SerDigital64><link href=https://serdigital64.github.io/container64/sources/ rel=canonical><link rel=icon href=../assets/images/favicon.png><meta name=generator content="mkdocs-1.2.3, mkdocs-material-8.2.1"><title>Sources - Container64 Project</title><link rel=stylesheet href=../assets/stylesheets/main.e8d9bf0c.min.css><link rel=stylesheet href=../assets/stylesheets/palette.e6a45f82.min.css><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback"><style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style><link rel=stylesheet href=../css/pygments-tango.css><script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-KMX4RGXREV"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-KMX4RGXREV",{page_path:e.pathname})})})</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-KMX4RGXREV"></script></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary data-md-color-accent> <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#images class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <header class=md-header data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=.. title="Container64 Project" class="md-header__button md-logo" aria-label="Container64 Project" data-md-component=logo> <img src=../images/SerDigital64-Font:ANSIShadow-circle.png alt=logo> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> Container64 Project </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> Sources </span> </div> </div> </div> <form class=md-header__option data-md-component=palette> <input class=md-option data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme=default data-md-color-primary data-md-color-accent aria-label="Switch to dark mode" type=radio name=__palette id=__palette_1> <label class="md-header__button md-icon" title="Switch to dark mode" for=__palette_2 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg> </label> <input class=md-option data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme=slate data-md-color-primary data-md-color-accent aria-label="Switch to light mode" type=radio name=__palette id=__palette_2> <label class="md-header__button md-icon" title="Switch to light mode" for=__palette_1 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg> </label> </form> <label class="md-header__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </label> <nav class=md-search__options aria-label=Search> <button type=reset class="md-search__icon md-icon" aria-label=Clear tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg> </button> </nav> </form> <div class=md-search__output> <div class=md-search__scrollwrap data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list></ol> </div> </div> </div> </div> </div> <div class=md-header__source> <a href=https://github.com/serdigital64/container64/ title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> GitHub </div> </a> </div> </nav> </header> <div class=md-container data-md-component=container> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary md-nav--integrated" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=.. title="Container64 Project" class="md-nav__button md-logo" aria-label="Container64 Project" data-md-component=logo> <img src=../images/SerDigital64-Font:ANSIShadow-circle.png alt=logo> </a> Container64 Project </label> <div class=md-nav__source> <a href=https://github.com/serdigital64/container64/ title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> GitHub </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=.. class=md-nav__link> Home </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" data-md-toggle=toc type=checkbox id=__toc> <label class="md-nav__link md-nav__link--active" for=__toc> Sources <span class="md-nav__icon md-icon"></span> </label> <a href=./ class="md-nav__link md-nav__link--active"> Sources </a> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#centos-8-ansible-node class=md-nav__link> centos-8-ansible-node </a> </li> <li class=md-nav__item> <a href=#centos-8-bash-test class=md-nav__link> centos-8-bash-test </a> </li> <li class=md-nav__item> <a href=#debian-10-ansible-node class=md-nav__link> debian-10-ansible-node </a> </li> <li class=md-nav__item> <a href=#debian-10-bash-test class=md-nav__link> debian-10-bash-test </a> </li> <li class=md-nav__item> <a href=#debian-11-ansible-node class=md-nav__link> debian-11-ansible-node </a> </li> <li class=md-nav__item> <a href=#debian-11-bash-test class=md-nav__link> debian-11-bash-test </a> </li> <li class=md-nav__item> <a href=#fedora-33-ansible-node class=md-nav__link> fedora-33-ansible-node </a> </li> <li class=md-nav__item> <a href=#fedora-35-ansible-node class=md-nav__link> fedora-35-ansible-node </a> </li> <li class=md-nav__item> <a href=#fedora-33-bash-test class=md-nav__link> fedora-33-bash-test </a> </li> <li class=md-nav__item> <a href=#fedora-35-bash-test class=md-nav__link> fedora-35-bash-test </a> </li> <li class=md-nav__item> <a href=#oraclelinux-8-ansible-node class=md-nav__link> oraclelinux-8-ansible-node </a> </li> <li class=md-nav__item> <a href=#oraclelinux-8-bash-test class=md-nav__link> oraclelinux-8-bash-test </a> </li> <li class=md-nav__item> <a href=#ubuntu-204-ansible-node class=md-nav__link> ubuntu-20.4-ansible-node </a> </li> <li class=md-nav__item> <a href=#ubuntu-204-bash-test class=md-nav__link> ubuntu-20.4-bash-test </a> </li> <li class=md-nav__item> <a href=#ubuntu-214-ansible-node class=md-nav__link> ubuntu-21.4-ansible-node </a> </li> <li class=md-nav__item> <a href=#ubuntu-214-bash-test class=md-nav__link> ubuntu-21.4-bash-test </a> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <article class="md-content__inner md-typeset"> <a href=https://github.com/serdigital64/container64/edit/master/docs/sources.md title="Edit this page" class="md-content__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg> </a> <h1 id=images>Images<a class=headerlink href=#images title="Permanent link">&para;</a></h1> <h2 id=centos-8-ansible-node>centos-8-ansible-node<a class=headerlink href=#centos-8-ansible-node title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span>
+<span class=normal>45</span>
+<span class=normal>46</span>
+<span class=normal>47</span>
+<span class=normal>48</span>
+<span class=normal>49</span>
+<span class=normal>50</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/centos</span><span class=p>:</span><span class=m>8</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;centos&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;8.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.1.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;systemd,sudo,python3&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>LC_ALL</span><span class=o>=</span><span class=s2>&quot;C&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>dnf</span><span class=w> </span><span class=err>makecache</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PREREQS</span><span class=o>=</span><span class=s2>&quot;kbd-legacy kbd-misc xkeyboard-config diffutils kbd libxkbcommon&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PACKAGES</span><span class=o>=</span><span class=s2>&quot;systemd systemd-libs systemd-pam systemd-udev&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: SYSTEMD</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>dnf</span><span class=w> </span><span class=na>--color</span><span class=o>=</span><span class=err>never</span><span class=w> </span><span class=err>--nodocs</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_SYSTEMD_PREREQS</span><span class=w> </span><span class=err>$APP_SYSTEMD_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: SUDO</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SUDO_PREREQS</span><span class=o>=</span><span class=s2>&quot;&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: SUDO</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SUDO_PACKAGES</span><span class=o>=</span><span class=s2>&quot;sudo&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: SUDO</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>dnf</span><span class=w> </span><span class=na>--color</span><span class=o>=</span><span class=err>never</span><span class=w> </span><span class=err>--nodocs</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_SUDO_PREREQS</span><span class=w> </span><span class=err>$APP_SUDO_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: PYTHON3</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_PYTHON3_PREREQS</span><span class=o>=</span><span class=s2>&quot;platform-python-pip python3-pip python3-setuptools&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: PYTHON3</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_PYTHON3_PACKAGES</span><span class=o>=</span><span class=s2>&quot;python36&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: PYTHON3</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>dnf</span><span class=w> </span><span class=na>--color</span><span class=o>=</span><span class=err>never</span><span class=w> </span><span class=err>--nodocs</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_PYTHON</span><span class=m>3</span><span class=err>_PREREQS</span><span class=w> </span><span class=err>$APP_PYTHON</span><span class=m>3</span><span class=err>_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Configure subsystem: systemd</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>systemctl</span><span class=w> </span><span class=kt>set</span><span class=err>-default</span><span class=w> </span><span class=nv>multi-user.target</span><span class=c1></span>
+
+<span class=c1># Cleanup package manager</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>dnf</span><span class=w> </span><span class=err>clean</span><span class=w> </span><span class=err>all</span><span class=c1></span>
+
+<span class=c1># Final command</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=s2>&quot;/lib/systemd/systemd&quot;</span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> <h2 id=centos-8-bash-test>centos-8-bash-test<a class=headerlink href=#centos-8-bash-test title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span>
+<span class=normal>45</span>
+<span class=normal>46</span>
+<span class=normal>47</span>
+<span class=normal>48</span>
+<span class=normal>49</span>
+<span class=normal>50</span>
+<span class=normal>51</span>
+<span class=normal>52</span>
+<span class=normal>53</span>
+<span class=normal>54</span>
+<span class=normal>55</span>
+<span class=normal>56</span>
+<span class=normal>57</span>
+<span class=normal>58</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/centos</span><span class=p>:</span><span class=m>8</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;centos&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;8.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.2.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=c1></span>
+
+<span class=c1># Download BashLib64</span>
+<span class=err>ADD</span><span class=w> </span><span class=err>https</span><span class=p>:</span><span class=err>//</span><span class=nv>raw.githubusercontent.com</span><span class=err>/serdigital</span><span class=m>64</span><span class=err>/container</span><span class=m>64</span><span class=err>/master/src/loader/cmd</span><span class=w> </span><span class=err>/</span><span class=c1></span>
+
+<span class=c1># Prepare environment</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_sudo_add_root</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_VOLUME</span><span class=p>}</span><span class=c1></span>
+
+<span class=c1># Install Bats-Core</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_REPO</span><span class=o>=</span><span class=s2>&quot;https://github.com/bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;/opt&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_HELPERS</span><span class=o>=</span><span class=s2>&quot;${CNT64_BATSCORE_COMPONENT_PATH}/${CNT64_BATSCORE_COMPONENT_NAME}/test_helper&quot;</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$CNT</span><span class=m>64</span><span class=err>_BATSCORE_HELPERS</span><span class=c1></span>
+
+<span class=c1># Install plugins</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;$CNT64_BATSCORE_HELPERS&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-support&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-assert&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-file&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=c1></span>
+
+<span class=c1># Cleanup</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_cleanup_full</span><span class=c1></span>
+
+<span class=c1># Run bats-core against /test</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/test&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+<span class=err>USER</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w></span>
+<span class=err>ENTRYPOINT</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/opt/bats-core/bin/bats&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> <h2 id=debian-10-ansible-node>debian-10-ansible-node<a class=headerlink href=#debian-10-ansible-node title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span>
+<span class=normal>45</span>
+<span class=normal>46</span>
+<span class=normal>47</span>
+<span class=normal>48</span>
+<span class=normal>49</span>
+<span class=normal>50</span>
+<span class=normal>51</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/debian</span><span class=p>:</span><span class=err>buster</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;debian&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;10.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.1.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;systemd,sudo,python3&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>LC_ALL</span><span class=o>=</span><span class=s2>&quot;C&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>DEBIAN_FRONTEND</span><span class=o>=</span><span class=s2>&quot;noninteractive&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>update</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PREREQS</span><span class=o>=</span><span class=s2>&quot;dbus dmsetup&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PACKAGES</span><span class=o>=</span><span class=s2>&quot;systemd systemd-sysv&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: SYSTEMD</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_SYSTEMD_PREREQS</span><span class=w> </span><span class=err>$APP_SYSTEMD_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: SUDO</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SUDO_PREREQS</span><span class=o>=</span><span class=s2>&quot;lsb-base&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: SUDO</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SUDO_PACKAGES</span><span class=o>=</span><span class=s2>&quot;sudo&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: SUDO</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_SUDO_PREREQS</span><span class=w> </span><span class=err>$APP_SUDO_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: PYTHON3</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_PYTHON3_PREREQS</span><span class=o>=</span><span class=s2>&quot;bzip2 file mime-support readline-common xz-utils&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: PYTHON3</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_PYTHON3_PACKAGES</span><span class=o>=</span><span class=s2>&quot;python3 python3-minimal python3.7 python3.7-minimal&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: PYTHON3</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_PYTHON</span><span class=m>3</span><span class=err>_PREREQS</span><span class=w> </span><span class=err>$APP_PYTHON</span><span class=m>3</span><span class=err>_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Configure subsystem: systemd</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>systemctl</span><span class=w> </span><span class=kt>set</span><span class=err>-default</span><span class=w> </span><span class=nv>multi-user.target</span><span class=c1></span>
+
+<span class=c1># Cleanup package manager</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>clean</span><span class=c1></span>
+
+<span class=c1># Final command</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=s2>&quot;/lib/systemd/systemd&quot;</span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> <h2 id=debian-10-bash-test>debian-10-bash-test<a class=headerlink href=#debian-10-bash-test title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span>
+<span class=normal>45</span>
+<span class=normal>46</span>
+<span class=normal>47</span>
+<span class=normal>48</span>
+<span class=normal>49</span>
+<span class=normal>50</span>
+<span class=normal>51</span>
+<span class=normal>52</span>
+<span class=normal>53</span>
+<span class=normal>54</span>
+<span class=normal>55</span>
+<span class=normal>56</span>
+<span class=normal>57</span>
+<span class=normal>58</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/debian</span><span class=p>:</span><span class=err>buster</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;debian&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;10.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.2.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=c1></span>
+
+<span class=c1># Download BashLib64</span>
+<span class=err>ADD</span><span class=w> </span><span class=err>https</span><span class=p>:</span><span class=err>//</span><span class=nv>raw.githubusercontent.com</span><span class=err>/serdigital</span><span class=m>64</span><span class=err>/container</span><span class=m>64</span><span class=err>/master/src/loader/cmd</span><span class=w> </span><span class=err>/</span><span class=c1></span>
+
+<span class=c1># Prepare environment</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_sudo_add_root</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_VOLUME</span><span class=p>}</span><span class=c1></span>
+
+<span class=c1># Install Bats-Core</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_REPO</span><span class=o>=</span><span class=s2>&quot;https://github.com/bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;/opt&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_HELPERS</span><span class=o>=</span><span class=s2>&quot;${CNT64_BATSCORE_COMPONENT_PATH}/${CNT64_BATSCORE_COMPONENT_NAME}/test_helper&quot;</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$CNT</span><span class=m>64</span><span class=err>_BATSCORE_HELPERS</span><span class=c1></span>
+
+<span class=c1># Install plugins</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;$CNT64_BATSCORE_HELPERS&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-support&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-assert&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-file&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=c1></span>
+
+<span class=c1># Cleanup</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_cleanup_full</span><span class=c1></span>
+
+<span class=c1># Run bats-core against /test</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/test&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+<span class=err>USER</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w></span>
+<span class=err>ENTRYPOINT</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/opt/bats-core/bin/bats&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> <h2 id=debian-11-ansible-node>debian-11-ansible-node<a class=headerlink href=#debian-11-ansible-node title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span>
+<span class=normal>45</span>
+<span class=normal>46</span>
+<span class=normal>47</span>
+<span class=normal>48</span>
+<span class=normal>49</span>
+<span class=normal>50</span>
+<span class=normal>51</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/debian</span><span class=p>:</span><span class=err>bullseye</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;debian&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;11.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.1.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;systemd,sudo,python3&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>LC_ALL</span><span class=o>=</span><span class=s2>&quot;C&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>DEBIAN_FRONTEND</span><span class=o>=</span><span class=s2>&quot;noninteractive&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>update</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PREREQS</span><span class=o>=</span><span class=s2>&quot;dbus dmsetup&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PACKAGES</span><span class=o>=</span><span class=s2>&quot;systemd systemd-timesyncd&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: SYSTEMD</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_SYSTEMD_PREREQS</span><span class=w> </span><span class=err>$APP_SYSTEMD_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: SUDO</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SUDO_PREREQS</span><span class=o>=</span><span class=s2>&quot;&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: SUDO</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SUDO_PACKAGES</span><span class=o>=</span><span class=s2>&quot;sudo&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: SUDO</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_SUDO_PREREQS</span><span class=w> </span><span class=err>$APP_SUDO_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: PYTHON3</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_PYTHON3_PREREQS</span><span class=o>=</span><span class=s2>&quot;ca-certificates media-types openssl readline-common&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: PYTHON3</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_PYTHON3_PACKAGES</span><span class=o>=</span><span class=s2>&quot;python3 python3-minimal python3.9 python3.9-minimal&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: PYTHON3</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_PYTHON</span><span class=m>3</span><span class=err>_PREREQS</span><span class=w> </span><span class=err>$APP_PYTHON</span><span class=m>3</span><span class=err>_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Configure subsystem: systemd</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>systemctl</span><span class=w> </span><span class=kt>set</span><span class=err>-default</span><span class=w> </span><span class=nv>multi-user.target</span><span class=c1></span>
+
+<span class=c1># Cleanup package manager</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>clean</span><span class=c1></span>
+
+<span class=c1># Final command</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=s2>&quot;/lib/systemd/systemd&quot;</span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> <h2 id=debian-11-bash-test>debian-11-bash-test<a class=headerlink href=#debian-11-bash-test title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span>
+<span class=normal>45</span>
+<span class=normal>46</span>
+<span class=normal>47</span>
+<span class=normal>48</span>
+<span class=normal>49</span>
+<span class=normal>50</span>
+<span class=normal>51</span>
+<span class=normal>52</span>
+<span class=normal>53</span>
+<span class=normal>54</span>
+<span class=normal>55</span>
+<span class=normal>56</span>
+<span class=normal>57</span>
+<span class=normal>58</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/debian</span><span class=p>:</span><span class=err>bullseye</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;debian&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;11.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.2.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=c1></span>
+
+<span class=c1># Download BashLib64</span>
+<span class=err>ADD</span><span class=w> </span><span class=err>https</span><span class=p>:</span><span class=err>//</span><span class=nv>raw.githubusercontent.com</span><span class=err>/serdigital</span><span class=m>64</span><span class=err>/container</span><span class=m>64</span><span class=err>/master/src/loader/cmd</span><span class=w> </span><span class=err>/</span><span class=c1></span>
+
+<span class=c1># Prepare environment</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_sudo_add_root</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_VOLUME</span><span class=p>}</span><span class=c1></span>
+
+<span class=c1># Install Bats-Core</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_REPO</span><span class=o>=</span><span class=s2>&quot;https://github.com/bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;/opt&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_HELPERS</span><span class=o>=</span><span class=s2>&quot;${CNT64_BATSCORE_COMPONENT_PATH}/${CNT64_BATSCORE_COMPONENT_NAME}/test_helper&quot;</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$CNT</span><span class=m>64</span><span class=err>_BATSCORE_HELPERS</span><span class=c1></span>
+
+<span class=c1># Install plugins</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;$CNT64_BATSCORE_HELPERS&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-support&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-assert&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-file&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=c1></span>
+
+<span class=c1># Cleanup</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_cleanup_full</span><span class=c1></span>
+
+<span class=c1># Run bats-core against /test</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/test&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+<span class=err>USER</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w></span>
+<span class=err>ENTRYPOINT</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/opt/bats-core/bin/bats&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> <h2 id=fedora-33-ansible-node>fedora-33-ansible-node<a class=headerlink href=#fedora-33-ansible-node title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/fedora</span><span class=p>:</span><span class=m>33</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;fedora&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;33.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.1.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;systemd,sudo,python3&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>LC_ALL</span><span class=o>=</span><span class=s2>&quot;C&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>dnf</span><span class=w> </span><span class=err>makecache</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PREREQS1</span><span class=o>=</span><span class=s2>&quot;acl dbus device-mapper hwdata pciutils rdma-core xkeyboard-config diffutils&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PREREQS2</span><span class=o>=</span><span class=s2>&quot;kbd-legacy kbd-misc  diffutils kbd libxkbcommon&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PACKAGES</span><span class=o>=</span><span class=s2>&quot;systemd systemd-pam systemd-rpm-macros systemd-networkd&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: SYSTEMD</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>dnf</span><span class=w> </span><span class=na>--color</span><span class=o>=</span><span class=err>never</span><span class=w> </span><span class=err>--nodocs</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_SYSTEMD_PREREQS</span><span class=m>1</span><span class=w> </span><span class=err>$APP_SYSTEMD_PREREQS</span><span class=m>2</span><span class=w> </span><span class=err>$APP_SYSTEMD_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Configure subsystem: systemd</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>systemctl</span><span class=w> </span><span class=kt>set</span><span class=err>-default</span><span class=w> </span><span class=nv>multi-user.target</span><span class=c1></span>
+
+<span class=c1># Cleanup package manager</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>dnf</span><span class=w> </span><span class=err>clean</span><span class=w> </span><span class=err>all</span><span class=c1></span>
+
+<span class=c1># Final command</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=s2>&quot;/lib/systemd/systemd&quot;</span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> <h2 id=fedora-35-ansible-node>fedora-35-ansible-node<a class=headerlink href=#fedora-35-ansible-node title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/fedora</span><span class=p>:</span><span class=m>35</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;fedora&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;35.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.1.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;systemd,sudo,python3&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=c1></span>
+
+<span class=c1># Download BashLib64</span>
+<span class=err>ADD</span><span class=w> </span><span class=err>https</span><span class=p>:</span><span class=err>//</span><span class=nv>raw.githubusercontent.com</span><span class=err>/serdigital</span><span class=m>64</span><span class=err>/container</span><span class=m>64</span><span class=err>/master/src/loader/cmd</span><span class=w> </span><span class=err>/</span><span class=c1></span>
+
+<span class=c1># Install tools</span>
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_prepare</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PREREQS1</span><span class=o>=</span><span class=s2>&quot;acl dbus device-mapper hwdata pciutils rdma-core xkeyboard-config diffutils&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PREREQS2</span><span class=o>=</span><span class=s2>&quot;kbd-legacy kbd-misc  diffutils kbd libxkbcommon&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PACKAGES</span><span class=o>=</span><span class=s2>&quot;systemd systemd-pam systemd-rpm-macros systemd-networkd&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: SYSTEMD</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_install</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>$APP_SYSTEMD_PREREQS</span><span class=m>1</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>$APP_SYSTEMD_PREREQS</span><span class=m>2</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>$APP_SYSTEMD_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Configure subsystem: systemd</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>systemctl</span><span class=w> </span><span class=kt>set</span><span class=err>-default</span><span class=w> </span><span class=nv>multi-user.target</span><span class=c1></span>
+
+<span class=c1># Cleanup</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_cleanup_full</span><span class=c1></span>
+
+<span class=c1># Final command</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=s2>&quot;/lib/systemd/systemd&quot;</span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> <h2 id=fedora-33-bash-test>fedora-33-bash-test<a class=headerlink href=#fedora-33-bash-test title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span>
+<span class=normal>45</span>
+<span class=normal>46</span>
+<span class=normal>47</span>
+<span class=normal>48</span>
+<span class=normal>49</span>
+<span class=normal>50</span>
+<span class=normal>51</span>
+<span class=normal>52</span>
+<span class=normal>53</span>
+<span class=normal>54</span>
+<span class=normal>55</span>
+<span class=normal>56</span>
+<span class=normal>57</span>
+<span class=normal>58</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/fedora</span><span class=p>:</span><span class=m>33</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;fedora&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;33.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.2.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=c1></span>
+
+<span class=c1># Download BashLib64</span>
+<span class=err>ADD</span><span class=w> </span><span class=err>https</span><span class=p>:</span><span class=err>//</span><span class=nv>raw.githubusercontent.com</span><span class=err>/serdigital</span><span class=m>64</span><span class=err>/container</span><span class=m>64</span><span class=err>/master/src/loader/cmd</span><span class=w> </span><span class=err>/</span><span class=c1></span>
+
+<span class=c1># Prepare environment</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_sudo_add_root</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_VOLUME</span><span class=p>}</span><span class=c1></span>
+
+<span class=c1># Install Bats-Core</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_REPO</span><span class=o>=</span><span class=s2>&quot;https://github.com/bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;/opt&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_HELPERS</span><span class=o>=</span><span class=s2>&quot;${CNT64_BATSCORE_COMPONENT_PATH}/${CNT64_BATSCORE_COMPONENT_NAME}/test_helper&quot;</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$CNT</span><span class=m>64</span><span class=err>_BATSCORE_HELPERS</span><span class=c1></span>
+
+<span class=c1># Install plugins</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;$CNT64_BATSCORE_HELPERS&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-support&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-assert&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-file&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=c1></span>
+
+<span class=c1># Cleanup</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_cleanup_full</span><span class=c1></span>
+
+<span class=c1># Run bats-core against /test</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/test&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+<span class=err>USER</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w></span>
+<span class=err>ENTRYPOINT</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/opt/bats-core/bin/bats&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> <h2 id=fedora-35-bash-test>fedora-35-bash-test<a class=headerlink href=#fedora-35-bash-test title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span>
+<span class=normal>45</span>
+<span class=normal>46</span>
+<span class=normal>47</span>
+<span class=normal>48</span>
+<span class=normal>49</span>
+<span class=normal>50</span>
+<span class=normal>51</span>
+<span class=normal>52</span>
+<span class=normal>53</span>
+<span class=normal>54</span>
+<span class=normal>55</span>
+<span class=normal>56</span>
+<span class=normal>57</span>
+<span class=normal>58</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/fedora</span><span class=p>:</span><span class=m>35</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;fedora&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;35.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.2.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=c1></span>
+
+<span class=c1># Download BashLib64</span>
+<span class=err>ADD</span><span class=w> </span><span class=err>https</span><span class=p>:</span><span class=err>//</span><span class=nv>raw.githubusercontent.com</span><span class=err>/serdigital</span><span class=m>64</span><span class=err>/container</span><span class=m>64</span><span class=err>/master/src/loader/cmd</span><span class=w> </span><span class=err>/</span><span class=c1></span>
+
+<span class=c1># Prepare environment</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_sudo_add_root</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_VOLUME</span><span class=p>}</span><span class=c1></span>
+
+<span class=c1># Install Bats-Core</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_REPO</span><span class=o>=</span><span class=s2>&quot;https://github.com/bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;/opt&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_HELPERS</span><span class=o>=</span><span class=s2>&quot;${CNT64_BATSCORE_COMPONENT_PATH}/${CNT64_BATSCORE_COMPONENT_NAME}/test_helper&quot;</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$CNT</span><span class=m>64</span><span class=err>_BATSCORE_HELPERS</span><span class=c1></span>
+
+<span class=c1># Install plugins</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;$CNT64_BATSCORE_HELPERS&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-support&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-assert&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-file&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=c1></span>
+
+<span class=c1># Cleanup</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_cleanup_full</span><span class=c1></span>
+
+<span class=c1># Run bats-core against /test</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/test&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+<span class=err>USER</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w></span>
+<span class=err>ENTRYPOINT</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/opt/bats-core/bin/bats&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> <h2 id=oraclelinux-8-ansible-node>oraclelinux-8-ansible-node<a class=headerlink href=#oraclelinux-8-ansible-node title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span>
+<span class=normal>45</span>
+<span class=normal>46</span>
+<span class=normal>47</span>
+<span class=normal>48</span>
+<span class=normal>49</span>
+<span class=normal>50</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/oraclelinux</span><span class=p>:</span><span class=m>8</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;oraclelinux&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;8.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.1.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;systemd,sudo,python3&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>LC_ALL</span><span class=o>=</span><span class=s2>&quot;C&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>dnf</span><span class=w> </span><span class=err>makecache</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PREREQS</span><span class=o>=</span><span class=s2>&quot;kbd-legacy kbd-misc xkeyboard-config diffutils kbd libxkbcommon&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PACKAGES</span><span class=o>=</span><span class=s2>&quot;systemd systemd-libs systemd-pam systemd-udev&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: SYSTEMD</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>dnf</span><span class=w> </span><span class=na>--color</span><span class=o>=</span><span class=err>never</span><span class=w> </span><span class=err>--nodocs</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_SYSTEMD_PREREQS</span><span class=w> </span><span class=err>$APP_SYSTEMD_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: SUDO</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SUDO_PREREQS</span><span class=o>=</span><span class=s2>&quot;&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: SUDO</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SUDO_PACKAGES</span><span class=o>=</span><span class=s2>&quot;sudo&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: SUDO</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>dnf</span><span class=w> </span><span class=na>--color</span><span class=o>=</span><span class=err>never</span><span class=w> </span><span class=err>--nodocs</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_SUDO_PREREQS</span><span class=w> </span><span class=err>$APP_SUDO_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: PYTHON3</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_PYTHON3_PREREQS</span><span class=o>=</span><span class=s2>&quot;platform-python-pip python3-pip python3-setuptools&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: PYTHON3</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_PYTHON3_PACKAGES</span><span class=o>=</span><span class=s2>&quot;python36&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: PYTHON3</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>dnf</span><span class=w> </span><span class=na>--color</span><span class=o>=</span><span class=err>never</span><span class=w> </span><span class=err>--nodocs</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_PYTHON</span><span class=m>3</span><span class=err>_PREREQS</span><span class=w> </span><span class=err>$APP_PYTHON</span><span class=m>3</span><span class=err>_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Configure subsystem: systemd</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>systemctl</span><span class=w> </span><span class=kt>set</span><span class=err>-default</span><span class=w> </span><span class=nv>multi-user.target</span><span class=c1></span>
+
+<span class=c1># Cleanup package manager</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>dnf</span><span class=w> </span><span class=err>clean</span><span class=w> </span><span class=err>all</span><span class=c1></span>
+
+<span class=c1># Final command</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=s2>&quot;/lib/systemd/systemd&quot;</span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> <h2 id=oraclelinux-8-bash-test>oraclelinux-8-bash-test<a class=headerlink href=#oraclelinux-8-bash-test title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span>
+<span class=normal>45</span>
+<span class=normal>46</span>
+<span class=normal>47</span>
+<span class=normal>48</span>
+<span class=normal>49</span>
+<span class=normal>50</span>
+<span class=normal>51</span>
+<span class=normal>52</span>
+<span class=normal>53</span>
+<span class=normal>54</span>
+<span class=normal>55</span>
+<span class=normal>56</span>
+<span class=normal>57</span>
+<span class=normal>58</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/oraclelinux</span><span class=p>:</span><span class=m>8</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;oraclelinux&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;8.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.2.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=c1></span>
+
+<span class=c1># Download BashLib64</span>
+<span class=err>ADD</span><span class=w> </span><span class=err>https</span><span class=p>:</span><span class=err>//</span><span class=nv>raw.githubusercontent.com</span><span class=err>/serdigital</span><span class=m>64</span><span class=err>/container</span><span class=m>64</span><span class=err>/master/src/loader/cmd</span><span class=w> </span><span class=err>/</span><span class=c1></span>
+
+<span class=c1># Prepare environment</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_sudo_add_root</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_VOLUME</span><span class=p>}</span><span class=c1></span>
+
+<span class=c1># Install Bats-Core</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_REPO</span><span class=o>=</span><span class=s2>&quot;https://github.com/bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;/opt&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_HELPERS</span><span class=o>=</span><span class=s2>&quot;${CNT64_BATSCORE_COMPONENT_PATH}/${CNT64_BATSCORE_COMPONENT_NAME}/test_helper&quot;</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$CNT</span><span class=m>64</span><span class=err>_BATSCORE_HELPERS</span><span class=c1></span>
+
+<span class=c1># Install plugins</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;$CNT64_BATSCORE_HELPERS&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-support&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-assert&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-file&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=c1></span>
+
+<span class=c1># Cleanup</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_cleanup_full</span><span class=c1></span>
+
+<span class=c1># Run bats-core against /test</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/test&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+<span class=err>USER</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w></span>
+<span class=err>ENTRYPOINT</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/opt/bats-core/bin/bats&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> <h2 id=ubuntu-204-ansible-node>ubuntu-20.4-ansible-node<a class=headerlink href=#ubuntu-204-ansible-node title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/ubuntu</span><span class=p>:</span><span class=nv>20.04</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;ubuntu&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;20.4&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.1.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;systemd,sudo,python3&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>LC_ALL</span><span class=o>=</span><span class=s2>&quot;C&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>DEBIAN_FRONTEND</span><span class=o>=</span><span class=s2>&quot;noninteractive&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>update</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PREREQS1</span><span class=o>=</span><span class=s2>&quot;dbus dmsetup gir1.2-glib-2.0 networkd-dispatcher shared-mime-info tzdata xdg-user-dirs&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PREREQS2</span><span class=o>=</span><span class=s2>&quot;file mime-support readline-common xz-utils&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PREREQS3</span><span class=o>=</span><span class=s2>&quot;python3 python3-dbus python3-gi python3-minimal python3.8 python3.8-minimal&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PACKAGES</span><span class=o>=</span><span class=s2>&quot;systemd systemd-timesyncd&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: SYSTEMD</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_SYSTEMD_PREREQS</span><span class=m>1</span><span class=w> </span><span class=err>$APP_SYSTEMD_PREREQS</span><span class=m>2</span><span class=w> </span><span class=err>$APP_SYSTEMD_PREREQS</span><span class=m>3</span><span class=w> </span><span class=err>$APP_SYSTEMD_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: SUDO</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SUDO_PREREQS</span><span class=o>=</span><span class=s2>&quot;&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: SUDO</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SUDO_PACKAGES</span><span class=o>=</span><span class=s2>&quot;sudo&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: SUDO</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_SUDO_PREREQS</span><span class=w> </span><span class=err>$APP_SUDO_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Configure subsystem: systemd</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>systemctl</span><span class=w> </span><span class=kt>set</span><span class=err>-default</span><span class=w> </span><span class=nv>multi-user.target</span><span class=c1></span>
+
+<span class=c1># Cleanup package manager</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>clean</span><span class=c1></span>
+
+<span class=c1># Final command</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=s2>&quot;/lib/systemd/systemd&quot;</span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> <h2 id=ubuntu-204-bash-test>ubuntu-20.4-bash-test<a class=headerlink href=#ubuntu-204-bash-test title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span>
+<span class=normal>45</span>
+<span class=normal>46</span>
+<span class=normal>47</span>
+<span class=normal>48</span>
+<span class=normal>49</span>
+<span class=normal>50</span>
+<span class=normal>51</span>
+<span class=normal>52</span>
+<span class=normal>53</span>
+<span class=normal>54</span>
+<span class=normal>55</span>
+<span class=normal>56</span>
+<span class=normal>57</span>
+<span class=normal>58</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/debian</span><span class=p>:</span><span class=err>buster</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;debian&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;10.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.2.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=c1></span>
+
+<span class=c1># Download BashLib64</span>
+<span class=err>ADD</span><span class=w> </span><span class=err>https</span><span class=p>:</span><span class=err>//</span><span class=nv>raw.githubusercontent.com</span><span class=err>/serdigital</span><span class=m>64</span><span class=err>/container</span><span class=m>64</span><span class=err>/master/src/loader/cmd</span><span class=w> </span><span class=err>/</span><span class=c1></span>
+
+<span class=c1># Prepare environment</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_sudo_add_root</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_VOLUME</span><span class=p>}</span><span class=c1></span>
+
+<span class=c1># Install Bats-Core</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_REPO</span><span class=o>=</span><span class=s2>&quot;https://github.com/bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;/opt&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_HELPERS</span><span class=o>=</span><span class=s2>&quot;${CNT64_BATSCORE_COMPONENT_PATH}/${CNT64_BATSCORE_COMPONENT_NAME}/test_helper&quot;</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$CNT</span><span class=m>64</span><span class=err>_BATSCORE_HELPERS</span><span class=c1></span>
+
+<span class=c1># Install plugins</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;$CNT64_BATSCORE_HELPERS&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-support&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-assert&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-file&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=c1></span>
+
+<span class=c1># Cleanup</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_cleanup_full</span><span class=c1></span>
+
+<span class=c1># Run bats-core against /test</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/test&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+<span class=err>USER</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w></span>
+<span class=err>ENTRYPOINT</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/opt/bats-core/bin/bats&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> <h2 id=ubuntu-214-ansible-node>ubuntu-21.4-ansible-node<a class=headerlink href=#ubuntu-214-ansible-node title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/ubuntu</span><span class=p>:</span><span class=nv>21.04</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;ubuntu&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;21.4&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.1.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;systemd,sudo,python3&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>LC_ALL</span><span class=o>=</span><span class=s2>&quot;C&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>DEBIAN_FRONTEND</span><span class=o>=</span><span class=s2>&quot;noninteractive&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>update</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PREREQS1</span><span class=o>=</span><span class=s2>&quot;dbus dmsetup gir1.2-glib-2.0 networkd-dispatcher shared-mime-info xdg-user-dirs&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PREREQS2</span><span class=o>=</span><span class=s2>&quot;ca-certificates media-types openssl readline-common tzdata&quot;</span><span class=w></span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PREREQS3</span><span class=o>=</span><span class=s2>&quot;python3 python3-minimal python3.9 python3.9-minimal python3-dbus python3-gi&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: SYSTEMD</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SYSTEMD_PACKAGES</span><span class=o>=</span><span class=s2>&quot;systemd systemd-timesyncd&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: SYSTEMD</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_SYSTEMD_PREREQS</span><span class=m>1</span><span class=w> </span><span class=err>$APP_SYSTEMD_PREREQS</span><span class=m>2</span><span class=w> </span><span class=err>$APP_SYSTEMD_PREREQS</span><span class=m>3</span><span class=w> </span><span class=err>$APP_SYSTEMD_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Define requirements for application: SUDO</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SUDO_PREREQS</span><span class=o>=</span><span class=s2>&quot;&quot;</span><span class=c1></span>
+
+<span class=c1># Define packages for application: SUDO</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>APP_SUDO_PACKAGES</span><span class=o>=</span><span class=s2>&quot;sudo&quot;</span><span class=c1></span>
+
+<span class=c1># Install packages for the application: SUDO</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>-y</span><span class=w> </span><span class=err>install</span><span class=w> </span><span class=err>$APP_SUDO_PREREQS</span><span class=w> </span><span class=err>$APP_SUDO_PACKAGES</span><span class=c1></span>
+
+<span class=c1># Configure subsystem: systemd</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>systemctl</span><span class=w> </span><span class=kt>set</span><span class=err>-default</span><span class=w> </span><span class=nv>multi-user.target</span><span class=c1></span>
+
+<span class=c1># Cleanup package manager</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>apt-get</span><span class=w> </span><span class=err>clean</span><span class=c1></span>
+
+<span class=c1># Final command</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=s2>&quot;/lib/systemd/systemd&quot;</span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> <h2 id=ubuntu-214-bash-test>ubuntu-21.4-bash-test<a class=headerlink href=#ubuntu-214-bash-test title="Permanent link">&para;</a></h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span>
+<span class=normal>45</span>
+<span class=normal>46</span>
+<span class=normal>47</span>
+<span class=normal>48</span>
+<span class=normal>49</span>
+<span class=normal>50</span>
+<span class=normal>51</span>
+<span class=normal>52</span>
+<span class=normal>53</span>
+<span class=normal>54</span>
+<span class=normal>55</span>
+<span class=normal>56</span>
+<span class=normal>57</span>
+<span class=normal>58</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/ubuntu</span><span class=p>:</span><span class=nv>21.04</span><span class=c1></span>
+
+<span class=c1># Image Metadata</span>
+<span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;ubuntu&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;21.4&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.2.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
+
+<span class=c1># Prepare package installer</span>
+<span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=c1></span>
+
+<span class=c1># Download BashLib64</span>
+<span class=err>ADD</span><span class=w> </span><span class=err>https</span><span class=p>:</span><span class=err>//</span><span class=nv>raw.githubusercontent.com</span><span class=err>/serdigital</span><span class=m>64</span><span class=err>/container</span><span class=m>64</span><span class=err>/master/src/loader/cmd</span><span class=w> </span><span class=err>/</span><span class=c1></span>
+
+<span class=c1># Prepare environment</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_sudo_add_root</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_VOLUME</span><span class=p>}</span><span class=c1></span>
+
+<span class=c1># Install Bats-Core</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_REPO</span><span class=o>=</span><span class=s2>&quot;https://github.com/bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-core&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;/opt&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_HELPERS</span><span class=o>=</span><span class=s2>&quot;${CNT64_BATSCORE_COMPONENT_PATH}/${CNT64_BATSCORE_COMPONENT_NAME}/test_helper&quot;</span><span class=w></span>
+
+<span class=err>RUN</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_mkdir_full</span><span class=w> </span><span class=err>$CNT</span><span class=m>64</span><span class=err>_BATSCORE_HELPERS</span><span class=c1></span>
+
+<span class=c1># Install plugins</span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_PATH</span><span class=o>=</span><span class=s2>&quot;$CNT64_BATSCORE_HELPERS&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-support&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-assert&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=w></span>
+
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_COMPONENT_NAME</span><span class=o>=</span><span class=s2>&quot;bats-file&quot;</span><span class=w></span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_vcs_git_clone</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_REPO</span><span class=p>}</span><span class=err>/$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_NAME</span><span class=p>}.</span><span class=err>git</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_COMPONENT_PATH</span><span class=p>}</span><span class=w> </span><span class=err>&#39;master&#39;</span><span class=c1></span>
+
+<span class=c1># Cleanup</span>
+<span class=err>RUN</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_os_cleanup_full</span><span class=c1></span>
+
+<span class=c1># Run bats-core against /test</span>
+<span class=err>CMD</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/test&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+<span class=err>USER</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w></span>
+<span class=err>ENTRYPOINT</span><span class=w> </span><span class=p>[</span><span class=w> </span><span class=s2>&quot;/opt/bats-core/bin/bats&quot;</span><span class=w> </span><span class=p>]</span><span class=w></span>
+</code></pre></div> </td></tr></table> </article> </div> </div> <a href=# class="md-top md-icon" data-md-component=top data-md-state=hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg> Back to top </a> </main> <footer class=md-footer> <nav class="md-footer__inner md-grid" aria-label=Footer> <a href=.. class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel=prev> <div class="md-footer__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </div> <div class=md-footer__title> <div class=md-ellipsis> <span class=md-footer__direction> Previous </span> Home </div> </div> </a> </nav> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-copyright> <div class=md-copyright__highlight> GPL-3.0-or-later </div> Made with <a href=https://squidfunk.github.io/mkdocs-material/ target=_blank rel=noopener> Material for MkDocs </a> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <script id=__config type=application/json>{"base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.expand", "navigation.indexes", "toc.integrate", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script> <script src=../assets/javascripts/bundle.8aa65030.min.js></script> </body> </html>

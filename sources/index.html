@@ -140,14 +140,15 @@
 <span class=normal>57</span>
 <span class=normal>58</span>
 <span class=normal>59</span>
-<span class=normal>60</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=normal>60</span>
+<span class=normal>61</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
 <span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/almalinux</span><span class=p>:</span><span class=nv>8.5</span><span class=c1></span>
 
 <span class=c1># Image Metadata</span>
 <span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;almalinux&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;8.5&quot;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.1.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.2.0&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
 
@@ -161,9 +162,10 @@
 <span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_HELPERS</span><span class=o>=</span><span class=s2>&quot;sudo git diffutils&quot;</span><span class=w></span>
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_HELPERS</span><span class=p>}</span><span class=w></span>
 
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
@@ -263,7 +265,8 @@
 <span class=normal>61</span>
 <span class=normal>62</span>
 <span class=normal>63</span>
-<span class=normal>64</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=normal>64</span>
+<span class=normal>65</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
 <span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/alpine</span><span class=p>:</span><span class=m>3</span><span class=c1></span>
 
 <span class=c1># Image Metadata</span>
@@ -288,9 +291,10 @@
 <span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_HELPERS</span><span class=o>=</span><span class=s2>&quot;sudo git mawk gawk&quot;</span><span class=w></span>
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_HELPERS</span><span class=p>}</span><span class=w></span>
 
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_iam_user_add</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
@@ -469,8 +473,11 @@
 <span class=normal>57</span>
 <span class=normal>58</span>
 <span class=normal>59</span>
-<span class=normal>60</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
-<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/centos</span><span class=p>:</span><span class=m>8</span><span class=c1></span>
+<span class=normal>60</span>
+<span class=normal>61</span>
+<span class=normal>62</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=c1>#FROM docker.io/library/centos:8</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>quay.io</span><span class=err>/centos/centos</span><span class=p>:</span><span class=m>8</span><span class=c1></span>
 
 <span class=c1># Image Metadata</span>
 <span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
@@ -490,9 +497,10 @@
 <span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_HELPERS</span><span class=o>=</span><span class=s2>&quot;sudo git diffutils hostname&quot;</span><span class=w></span>
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_HELPERS</span><span class=p>}</span><span class=w></span>
 
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
@@ -671,14 +679,15 @@
 <span class=normal>57</span>
 <span class=normal>58</span>
 <span class=normal>59</span>
-<span class=normal>60</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=normal>60</span>
+<span class=normal>61</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
 <span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/debian</span><span class=p>:</span><span class=err>buster</span><span class=c1></span>
 
 <span class=c1># Image Metadata</span>
 <span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;debian&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;10.0&quot;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.3.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.4.0&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
 
@@ -686,15 +695,16 @@
 <span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=c1></span>
 
 <span class=c1># Download BashLib64</span>
-<span class=err>ADD</span><span class=w> </span><span class=err>https</span><span class=p>:</span><span class=err>//</span><span class=nv>raw.githubusercontent.com</span><span class=err>/serdigital</span><span class=m>64</span><span class=err>/container</span><span class=m>64</span><span class=err>/master/src/loader/cmd</span><span class=w> </span><span class=err>/</span><span class=c1></span>
+<span class=err>COPY</span><span class=w> </span><span class=err>loader/</span><span class=nv>bashlib64.bash</span><span class=w> </span><span class=err>/cmd</span><span class=c1></span>
 
 <span class=c1># Prepare environment</span>
 <span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_HELPERS</span><span class=o>=</span><span class=s2>&quot;sudo git wget curl gawk&quot;</span><span class=w></span>
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_HELPERS</span><span class=p>}</span><span class=w></span>
 
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
@@ -873,14 +883,15 @@
 <span class=normal>57</span>
 <span class=normal>58</span>
 <span class=normal>59</span>
-<span class=normal>60</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=normal>60</span>
+<span class=normal>61</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
 <span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/debian</span><span class=p>:</span><span class=err>bullseye</span><span class=c1></span>
 
 <span class=c1># Image Metadata</span>
 <span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;debian&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;11.0&quot;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.3.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.4.0&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
 
@@ -894,9 +905,10 @@
 <span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_HELPERS</span><span class=o>=</span><span class=s2>&quot;sudo git wget curl gawk&quot;</span><span class=w></span>
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_HELPERS</span><span class=p>}</span><span class=w></span>
 
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
@@ -1158,14 +1170,15 @@
 <span class=normal>57</span>
 <span class=normal>58</span>
 <span class=normal>59</span>
-<span class=normal>60</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=normal>60</span>
+<span class=normal>61</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
 <span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/fedora</span><span class=p>:</span><span class=m>33</span><span class=c1></span>
 
 <span class=c1># Image Metadata</span>
 <span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;fedora&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;33.0&quot;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.3.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.4.0&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
 
@@ -1179,9 +1192,10 @@
 <span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_HELPERS</span><span class=o>=</span><span class=s2>&quot;sudo git diffutils hostname&quot;</span><span class=w></span>
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_HELPERS</span><span class=p>}</span><span class=w></span>
 
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
@@ -1277,14 +1291,15 @@
 <span class=normal>57</span>
 <span class=normal>58</span>
 <span class=normal>59</span>
-<span class=normal>60</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=normal>60</span>
+<span class=normal>61</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
 <span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/fedora</span><span class=p>:</span><span class=m>35</span><span class=c1></span>
 
 <span class=c1># Image Metadata</span>
 <span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;fedora&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;35.0&quot;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.3.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.4.0&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
 
@@ -1298,9 +1313,10 @@
 <span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_HELPERS</span><span class=o>=</span><span class=s2>&quot;sudo git diffutils hostname&quot;</span><span class=w></span>
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_HELPERS</span><span class=p>}</span><span class=w></span>
 
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
@@ -1479,14 +1495,15 @@
 <span class=normal>57</span>
 <span class=normal>58</span>
 <span class=normal>59</span>
-<span class=normal>60</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=normal>60</span>
+<span class=normal>61</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
 <span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/oraclelinux</span><span class=p>:</span><span class=m>8</span><span class=c1></span>
 
 <span class=c1># Image Metadata</span>
 <span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;oraclelinux&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;8.0&quot;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.3.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.4.0&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
 
@@ -1500,9 +1517,10 @@
 <span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_HELPERS</span><span class=o>=</span><span class=s2>&quot;sudo git tar hostname&quot;</span><span class=w></span>
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_HELPERS</span><span class=p>}</span><span class=w></span>
 
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
@@ -1681,14 +1699,15 @@
 <span class=normal>57</span>
 <span class=normal>58</span>
 <span class=normal>59</span>
-<span class=normal>60</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=normal>60</span>
+<span class=normal>61</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
 <span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/redhat/ubi</span><span class=m>8</span><span class=p>:</span><span class=nv>8.5</span><span class=c1></span>
 
 <span class=c1># Image Metadata</span>
 <span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;rhel&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;8.5&quot;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.1.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.3.0&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
 
@@ -1702,9 +1721,10 @@
 <span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_HELPERS</span><span class=o>=</span><span class=s2>&quot;sudo git hostname diffutils&quot;</span><span class=w></span>
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_HELPERS</span><span class=p>}</span><span class=w></span>
 
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
@@ -1883,14 +1903,15 @@
 <span class=normal>57</span>
 <span class=normal>58</span>
 <span class=normal>59</span>
-<span class=normal>60</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
-<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/debian</span><span class=p>:</span><span class=err>buster</span><span class=c1></span>
+<span class=normal>60</span>
+<span class=normal>61</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/ubuntu</span><span class=p>:</span><span class=nv>20.04</span><span class=c1></span>
 
 <span class=c1># Image Metadata</span>
 <span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;debian&quot;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;10.0&quot;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.3.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;ubuntu&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;20.4&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.6.0&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
 
@@ -1898,15 +1919,16 @@
 <span class=err>ENV</span><span class=w> </span><span class=na>container</span><span class=o>=</span><span class=s2>&quot;docker&quot;</span><span class=c1></span>
 
 <span class=c1># Download BashLib64</span>
-<span class=err>ADD</span><span class=w> </span><span class=err>https</span><span class=p>:</span><span class=err>//</span><span class=nv>raw.githubusercontent.com</span><span class=err>/serdigital</span><span class=m>64</span><span class=err>/container</span><span class=m>64</span><span class=err>/master/src/loader/cmd</span><span class=w> </span><span class=err>/</span><span class=c1></span>
+<span class=err>COPY</span><span class=w> </span><span class=err>loader/</span><span class=nv>bashlib64.bash</span><span class=w> </span><span class=err>/cmd</span><span class=c1></span>
 
 <span class=c1># Prepare environment</span>
 <span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_HELPERS</span><span class=o>=</span><span class=s2>&quot;sudo git wget curl gawk&quot;</span><span class=w></span>
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_HELPERS</span><span class=p>}</span><span class=w></span>
 
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
@@ -2085,14 +2107,15 @@
 <span class=normal>57</span>
 <span class=normal>58</span>
 <span class=normal>59</span>
-<span class=normal>60</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
+<span class=normal>60</span>
+<span class=normal>61</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Base image</span>
 <span class=err>FROM</span><span class=w> </span><span class=nv>docker.io</span><span class=err>/library/ubuntu</span><span class=p>:</span><span class=nv>21.04</span><span class=c1></span>
 
 <span class=c1># Image Metadata</span>
 <span class=err>LABEL</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-name</span><span class=p>=</span><span class=s2>&quot;ubuntu&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.os-version</span><span class=p>=</span><span class=s2>&quot;21.4&quot;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.3.0&quot;</span><span class=w> </span>\<span class=w></span>
+<span class=w>    </span><span class=nv>container64.image-version</span><span class=p>=</span><span class=s2>&quot;0.4.0&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>container64.image-content</span><span class=p>=</span><span class=s2>&quot;bash,bats-core&quot;</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=nv>org.opencontainers.image.description</span><span class=p>=</span><span class=s2>&quot;Purpose: Bash scripts testing - Packages: Bash, Bats Core, Bash Core plugins&quot;</span><span class=c1></span>
 
@@ -2106,9 +2129,10 @@
 <span class=err>ARG</span><span class=w> </span><span class=na>BL64_LIB_CMD</span><span class=o>=</span><span class=s2>&quot;1&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_USER</span><span class=o>=</span><span class=s2>&quot;test&quot;</span><span class=w></span>
 <span class=err>ARG</span><span class=w> </span><span class=na>CNT64_BATSCORE_VOLUME</span><span class=o>=</span><span class=s2>&quot;/test&quot;</span><span class=w></span>
+<span class=err>ARG</span><span class=w> </span><span class=na>CNT64_HELPERS</span><span class=o>=</span><span class=s2>&quot;sudo git wget curl gawk&quot;</span><span class=w></span>
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/bin/chmod</span><span class=w> </span><span class=m>755</span><span class=w> </span><span class=err>/cmd</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
-<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>sudo</span><span class=w> </span><span class=err>git</span><span class=w></span>
+<span class=w>    </span><span class=err>/cmd</span><span class=w> </span><span class=err>bl</span><span class=m>64</span><span class=err>_pkg_deploy</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_HELPERS</span><span class=p>}</span><span class=w></span>
 
 <span class=err>RUN</span><span class=w> </span>\<span class=w></span>
 <span class=w>    </span><span class=err>/usr/sbin/useradd</span><span class=w> </span><span class=err>-m</span><span class=w> </span><span class=err>$</span><span class=p>{</span><span class=err>CNT</span><span class=m>64</span><span class=err>_BATSCORE_USER</span><span class=p>}</span><span class=w> </span><span class=err>&amp;&amp;</span><span class=w> </span>\<span class=w></span>
